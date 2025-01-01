@@ -12,14 +12,11 @@ interface VideoResponse {
   error?: string;
 }
 
-const DEFAULT_FPS = 24;
-const DEFAULT_DURATION = 3; // seconds
-
 export async function generateVideo({
   photoUrl,
   motionType,
-  duration = DEFAULT_DURATION,
-  fps = DEFAULT_FPS
+  duration = 3,
+  fps = 24
 }: VideoGenerationParams): Promise<VideoResponse> {
   try {
     const response = await fetch('https://api.fal.ai/video/generate', {
@@ -37,13 +34,8 @@ export async function generateVideo({
       }),
     });
 
-    if (!response.ok) {
-      throw new Error(`Video generation failed: ${response.statusText}`);
-    }
-
     return await response.json();
   } catch (error) {
-    console.error('Video generation error:', error);
     throw error;
   }
 }
