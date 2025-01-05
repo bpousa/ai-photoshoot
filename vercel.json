@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "functions": {
+    "api/generate/*.ts": {
+      "memory": 1024,
+      "maxDuration": 300
+    },
+    "api/train/*.ts": {
+      "memory": 1024,
+      "maxDuration": 900
+    }
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_APP_URL": "@app_url",
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_key",
+    "FAL_AI_API_KEY": "@fal_ai_key"
+  },
+  "images": {
+    "sizes": [640, 828, 1200, 1920],
+    "domains": [
+      "your-s3-bucket.s3.amazonaws.com"
+    ]
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
+    }
+  ]
+}
