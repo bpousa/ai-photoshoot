@@ -1,38 +1,110 @@
 # AI PhotoShoot
 
-An AI-powered photo generation service that creates custom photos based on user uploads and pre-made poses.
+A platform for AI-powered photo generation and white-label business solutions.
 
 ## Features
 
-- Upload personal photos for AI training
-- Browse and select from pre-made pose templates
-- Generate personalized photos using fal.ai integration
-- Subscription-based photo generation service
+### Core Features
+- Custom photo generation with LORA model training
+- Pre-made professional poses and styles
+- Video conversion with cinematic effects
+- AI-assisted prompt improvement
+
+### Business Platform
+- White-label client portals
+- Custom domain support
+- Brand customization
+- Package management
+- Client analytics
+
+### Client Features
+- Photo/video generation
+- Gallery management
+- Package selection
+- Download center
 
 ## Tech Stack
 
-- Next.js 14 (React framework)
-- TypeScript
-- Tailwind CSS
-- Stripe for payments
-- fal.ai for AI model training and inference
-- Supabase for database and authentication
-- AWS S3 for image storage
+- **Frontend**: Next.js 14, TypeScript, TailwindCSS
+- **Backend**: 
+  - Supabase (Auth, Database)
+  - Vercel (Hosting, Domains)
+  - AWS S3 (Storage)
+- **AI Integration**:
+  - fal.ai (Flux LORA, Kling)
+  - Anthropic Claude (Prompt assistance)
+- **Payments**: Stripe
 
 ## Getting Started
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Copy `.env.example` to `.env.local` and fill in your credentials
-4. Run the development server: `npm run dev`
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ai-photoshoot.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Configure environment variables:
+```bash
+cp .env.example .env.local
+```
+
+4. Run the development server:
+```bash
+npm run dev
+```
 
 ## Project Structure
 
 ```
 /src
   /app             # Next.js 14 app directory
+    /api           # API routes
+    /studio        # Business/admin dashboard
+    /client        # Client portal
   /components      # React components
-  /lib            # Utility functions and shared logic
-  /types          # TypeScript type definitions
+  /lib            # Utility functions
   /services       # External service integrations
+  /types          # TypeScript type definitions
+  /hooks          # Custom React hooks
+  /utils          # Helper functions
 ```
+
+## Business Features
+
+### Package Management
+- Custom package creation
+- Credit management
+- Client assignment
+- Usage tracking
+
+### White Label
+- Custom domains
+- Brand customization
+- Client portal theming
+- Email templates
+
+### Analytics
+- Usage metrics
+- Revenue tracking
+- Client engagement
+- Generation analytics
+
+## Environment Setup
+
+See `.env.example` for required environment variables.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is private and confidential.
